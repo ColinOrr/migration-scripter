@@ -1,0 +1,8 @@
+/Build
+/Packages/*
+/TestResults
+/TestResult.xml
+bin
+obj
+*.user
+*.suo
