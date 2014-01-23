@@ -1,0 +1,26 @@
+﻿
+Entity Framework Migration Scripter
+
+  migration-scripter <assembly name> -config=<config path>
+                     [-source=<source migration>][-target=<target migration>]
+                     [-connection=<connection name>][-out=<output file>]
+
+where <assembly name> is the name of the assembly containing the migrations
+excluding the file extension.
+
+switches:
+
+    -config      (required) the path to the configuration file which contains 
+                 the connection string
+
+    -source      the migration to update from. If no source is supplied, a 
+                 script to update the current database will be produced.
+
+    -target      the migration to update to.  If no target is supplied, a 
+                 script to update to the latest migration will be produced.
+
+    -connection  the name of the connection string in the application 
+                 configuration if it differs from the <assembly name>.
+
+    -out         the name of the SQL file to be generated.  If no output is
+                 supplied the script will be written to the console.

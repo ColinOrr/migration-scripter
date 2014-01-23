@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>MigrationScripter</id>
-    <version>0.0.0.1</version>
+    <version>1.0.0.0</version>
     <title>Entity Framework Migration Scripter</title>
     <authors>Colin Orr</authors>
     <owners>Colin Orr</owners>
