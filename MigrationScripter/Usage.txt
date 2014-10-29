@@ -10,17 +10,23 @@ excluding the file extension.
 
 switches:
 
-    -config      (required) the path to the configuration file which contains 
-                 the connection string
+	-contextAssembly		the name of the assembly containing the database context
+							excluding the file extension
 
-    -source      the migration to update from. If no source is supplied, a 
-                 script to update the current database will be produced.
+	-configurationTypeName	the namespace qualified name of the migrations configuration
+							class
 
-    -target      the migration to update to.  If no target is supplied, a 
-                 script to update to the latest migration will be produced.
+	-config      			(required) the path to the configuration file which contains 
+							the connection string
 
-    -connection  the name of the connection string in the application 
-                 configuration if it differs from the <assembly name>.
+    -source      			the migration to update from. If no source is supplied, a 
+							script to update the current database will be produced.
 
-    -out         the name of the SQL file to be generated.  If no output is
-                 supplied the script will be written to the console.
+    -target      			the migration to update to.  If no target is supplied, a 
+							script to update to the latest migration will be produced.
+
+    -connection  			the name of the connection string in the application 
+							configuration if it differs from the <assembly name>.
+
+    -out         			the name of the SQL file to be generated.  If no output is
+							supplied the script will be written to the console.

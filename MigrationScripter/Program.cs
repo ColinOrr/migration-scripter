@@ -13,8 +13,8 @@ namespace MigrationScripter
         {
             var parameters = new
             {
-                contextAssembly       = args.FindParameter(),
-                migrationsAssembly    = args.FindParameter("migrationsAssembly") ?? args.FindParameter(),
+                migrationsAssembly    = args.FindParameter(),
+                contextAssembly    	  = args.FindParameter("contextAssembly") ?? args.FindParameter(),
                 configurationTypeName = args.FindParameter("configurationTypeName"),
                 config                = args.FindParameter("config"),
                 source                = args.FindParameter("source"),
