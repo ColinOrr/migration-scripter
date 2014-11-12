@@ -13,16 +13,18 @@ namespace MigrationScripter
         {
             var parameters = new
             {
-                assembly   = args.FindParameter(),
-                config     = args.FindParameter("config"),
-                source     = args.FindParameter("source"),
-                target     = args.FindParameter("target"),
-                connection = args.FindParameter("connection") ?? args.FindParameter(),
-                output     = args.FindParameter("out")
+                migrationsAssembly    = args.FindParameter(),
+                contextAssembly    	  = args.FindParameter("contextAssembly") ?? args.FindParameter(),
+                configurationTypeName = args.FindParameter("configurationTypeName"),
+                config                = args.FindParameter("config"),
+                source                = args.FindParameter("source"),
+                target                = args.FindParameter("target"),
+                connection            = args.FindParameter("connection") ?? args.FindParameter(),
+                output                = args.FindParameter("out")
             };
 
             //  Required Parameters
-            if (parameters.assembly == null || parameters.config == null) 
+            if (parameters.contextAssembly == null || parameters.config == null) 
             {
                 Console.WriteLine(Resources.Usage);
                 return null;
@@ -41,8 +43,9 @@ namespace MigrationScripter
             var connection = new DbConnectionInfo(parameters.connection);
 
             var tool = new ToolingFacade(
-                assemblyName:          parameters.assembly,
-                configurationTypeName: null,
+                migrationsAssemblyName: parameters.migrationsAssembly,
+                contextAssemblyName: parameters.contextAssembly,
+                configurationTypeName: parameters.configurationTypeName,
                 workingDirectory:      null,
                 configurationFilePath: parameters.config,
                 dataDirectory:         null,

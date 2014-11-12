@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>MigrationScripter</id>
+    <id>MigrationScripter-EF6</id>
     <version>1.0.0.0</version>
-    <title>Entity Framework Migration Scripter</title>
+    <title>Entity Framework 6 Migration Scripter</title>
     <authors>Colin Orr</authors>
     <owners>Colin Orr</owners>
     <licenseUrl>https://github.com/ColinOrr/migration-scripter#license</licenseUrl>
     <projectUrl>https://github.com/ColinOrr/migration-scripter</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Windows command line tool to script Entity Framework code first migrations.</description>
+    <description>Windows command line tool to script Entity Framework 6 code first migrations.</description>
     <copyright>Copyright © Colin Orr 2014</copyright>
     <tags>Entity Framework Code First Migrations SQL Script Command Line Tool</tags>
   </metadata>
