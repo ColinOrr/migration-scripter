@@ -2,6 +2,8 @@
 Entity Framework Migration Scripter
 
   migration-scripter <assembly name> -config=<config path>
+                     [-contextAssembly=<context assembly name>]
+                     [-configurationTypeName=<configuration type name>]
                      [-source=<source migration>][-target=<target migration>]
                      [-connection=<connection name>][-out=<output file>]
 
@@ -10,23 +12,29 @@ excluding the file extension.
 
 switches:
 
-	-contextAssembly		the name of the assembly containing the database context
-							excluding the file extension
+    -config                 (required) the path to the configuration file which
+                            contains the connection string
 
-	-configurationTypeName	the namespace qualified name of the migrations configuration
-							class
+    -contextAssembly        the name of the assembly containing the database
+                            context excluding the file extension. This defaults
+                            to the <assembly name> assembly if not supplied.
 
-	-config      			(required) the path to the configuration file which contains 
-							the connection string
+    -configurationTypeName  the namespace qualified name of the migrations
+                            configuration class. If not supplied the migrations
+                            assembly will be scanned for a Configuration class.
 
-    -source      			the migration to update from. If no source is supplied, a 
-							script to update the current database will be produced.
+    -source                 the migration to update from. If no source is
+                            supplied, a script to update the current database
+                            will be produced.
 
-    -target      			the migration to update to.  If no target is supplied, a 
-							script to update to the latest migration will be produced.
+    -target                 the migration to update to.  If no target is
+                            supplied, a script to update to the latest
+                            migration will be produced.
 
-    -connection  			the name of the connection string in the application 
-							configuration if it differs from the <assembly name>.
+    -connection             the name of the connection string in the
+                            application configuration if it differs from
+                            the <assembly name>.
 
-    -out         			the name of the SQL file to be generated.  If no output is
-							supplied the script will be written to the console.
+    -out                    the name of the SQL file to be generated.  If no
+                            output is supplied the script will be written to
+                            the console.
