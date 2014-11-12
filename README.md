@@ -7,6 +7,8 @@ Usage
 -----
 ```
   migration-scripter <assembly name> -config=<config path>
+                     [-contextAssembly=<context assembly name>]
+                     [-configurationTypeName=<configuration type name>]
                      [-source=<source migration>][-target=<target migration>]
                      [-connection=<connection name>][-out=<output file>]
 
@@ -15,20 +17,32 @@ excluding the file extension.
 
 switches:
 
-    -config      (required) the path to the configuration file which contains 
-                 the connection string
+    -config                 (required) the path to the configuration file which
+                            contains the connection string
 
-    -source      the migration to update from. If no source is supplied, a 
-                 script to update the current database will be produced.
+    -contextAssembly        the name of the assembly containing the database
+                            context excluding the file extension. This defaults
+                            to the <assembly name> assembly if not supplied.
 
-    -target      the migration to update to.  If no target is supplied, a 
-                 script to update to the latest migration will be produced.
+    -configurationTypeName  the namespace qualified name of the migrations
+                            configuration class. If not supplied the migrations
+                            assembly will be scanned for a Configuration class.
 
-    -connection  the name of the connection string in the application 
-                 configuration if it differs from the <assembly name>.
+    -source                 the migration to update from. If no source is
+                            supplied, a script to update the current database
+                            will be produced.
 
-    -out         the name of the SQL file to be generated.  If no output is
-                 supplied the script will be written to the console.
+    -target                 the migration to update to.  If no target is
+                            supplied, a script to update to the latest
+                            migration will be produced.
+
+    -connection             the name of the connection string in the
+                            application configuration if it differs from
+                            the <assembly name>.
+
+    -out                    the name of the SQL file to be generated.  If no
+                            output is supplied the script will be written to
+                            the console.
  ```
 
 
